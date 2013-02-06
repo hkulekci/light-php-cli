@@ -1,0 +1,4 @@
+.DS_Store
+
+service/logs/*
+!service/logs/README.md
