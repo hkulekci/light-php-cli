@@ -1,6 +1,14 @@
-light-php-cli
-=============
+## A Light Tool for PHP Command Line Interface 
 
-Light PHP CLI Bootstrap
+This tool or is example and bootstrap for CLI part of your project. You can fork and send pull request. I want to keep simple.
 
-This service is example and bootstrap for CLI part of your project. You can fork and send pull request. I want to keep simple.
+## Usage 
+
+You can use following line to run a parameter: 
+
+```
+> php -c service/php.ini service/bootstrap.php parameter1 index
+Running from CLI
+parameter1 file index method is runned! Args : a:0:{}
+> 
+```
