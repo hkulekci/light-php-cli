@@ -23,29 +23,29 @@ final class mymysqli extends MySQLi  {
 			exit();
 		}
 
-		if (is_resource($this->mysqli)) {
+		if ($result) {
 			$i = 0;
-
 			$data = array();
-
-			while ($row = $result->fetch_object()) {
-				$data[$i] = $row;
-
-				$i++;
+			if ( isset($result->num_rows) && $result->num_rows ){
+				while ($row = $result->fetch_object()) {
+					$data[$i] = $row;
+	
+					$i++;
+				}
+				$query = new stdClass();
+				$query->row = isset($data[0]) ? $data[0] : array();
+				$query->rows = $data;
+				$query->num_rows = $result->num_rows;
+				$result->close();
+				unset($data);
+				return $query;
+			}else{
+				return $result;
 			}
 
-			$result->close();
-			
-			$query = new stdClass();
-			$query->row = isset($data[0]) ? $data[0] : array();
-			$query->rows = $data;
-			$query->num_rows = $result->num_rows;
-
-			unset($data);
-
-			return $query;	
 		} else {
-			return true;
+			
+			return false;
 		}
 	}
 	
