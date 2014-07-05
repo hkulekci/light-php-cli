@@ -1,5 +1,4 @@
 <?php
-
 final class myPDO
 {
     private $pdo = null;

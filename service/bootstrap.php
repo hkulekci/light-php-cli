@@ -6,9 +6,9 @@ if(defined('STDIN') ){
 	echo("Can Not Running This File Directly".PHP_EOL);
 	exit(0);
 }
-/***** DOCS 
+/***** DOCS
 
-Run parameters : 
+Run parameters :
 php -c php.ini commandline_bootstrap.php parameter1 parameter2
 
 ******/
@@ -34,4 +34,3 @@ $result = $route->prepare( $argv );
 
 
 exit($result);
-?>

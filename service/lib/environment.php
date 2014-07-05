@@ -1,7 +1,6 @@
 <?php
-	
 class Environment{
-	
+
 	private $data = array();
 
 	public function get($key) {
@@ -17,5 +16,3 @@ class Environment{
   	}
 
 }
-
-?>

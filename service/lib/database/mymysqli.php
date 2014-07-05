@@ -29,7 +29,7 @@ final class mymysqli extends MySQLi  {
 			if ( isset($result->num_rows) && $result->num_rows ){
 				while ($row = $result->fetch_object()) {
 					$data[$i] = $row;
-	
+
 					$i++;
 				}
 				$query = new stdClass();
@@ -44,11 +44,11 @@ final class mymysqli extends MySQLi  {
 			}
 
 		} else {
-			
+
 			return false;
 		}
 	}
-	
+
 	public function escape($value) {
 		return $this->mysqli->real_escape_string($value);
 	}
@@ -69,4 +69,3 @@ final class mymysqli extends MySQLi  {
 			$this->mysqli->close();
 	}
 }
-?>

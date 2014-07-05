@@ -1,6 +1,6 @@
-<?php  
+<?php
 class parameter1 extends Controller{
-	
+
 	public function index($data = array()){
 
 		echo 'parameter1 file index method is runned! Args : '.serialize($data) . PHP_EOL;
@@ -17,4 +17,3 @@ class parameter1 extends Controller{
 	}
 
 }
-?>

@@ -28,4 +28,3 @@ class DB {
 		return $this->driver->getLastId();
 	}
 }
-?>

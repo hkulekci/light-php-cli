@@ -1,24 +1,24 @@
-<?php 
+<?php
 class Log {
 	private $filename;
-	
+
 	public function __construct($filename) {
 		$this->filename = $filename;
 	}
-	
+
 	public function write($message) {
 		$file = DIR_LOGS . $this->filename;
-		
-		$handle = fopen($file, 'a+'); 
-		
+
+		$handle = fopen($file, 'a+');
+
 		fwrite($handle, date('Y-m-d G:i:s') . ' - ' . $message . "\n");
-			
-		fclose($handle); 
+
+		fclose($handle);
 	}
 
 	public function error_handler($errno, $errstr, $errfile, $errline) {
 		//global $log;
-		
+
 		switch ($errno) {
 			case E_NOTICE:
 			case E_USER_NOTICE:
@@ -36,7 +36,7 @@ class Log {
 				$error = 'Unknown';
 				break;
 		}
-		
+
 		if (ERROR_DISPLAY)
 			echo '<b>' . $error . '</b>: ' . $errstr . ' in <b>' . $errfile . '</b> on line <b>' . $errline . '</b>';
 
@@ -46,4 +46,3 @@ class Log {
 		return true;
 	}
 }
-?>
