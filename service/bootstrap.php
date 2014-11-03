@@ -32,5 +32,8 @@ require LIBRARY_DIR.'route.php';
 $route = new Route( $env );
 $result = $route->prepare( $argv );
 
-
-exit($result);
+if ($result) {
+    $route->run();
+} else {
+    print 'Something went wrong!'.PHP_EOL;
+}
