@@ -15,3 +15,9 @@ Running from CLI
 parameter1 file index method is runned! Args : a:2:{i:0;s:6:"param1";i:1;s:6:"param2";}
 >
 ```
+
+To run script with while loop, use the following script.
+
+```
+php -c service/php.ini service/bootstrap.php as_a_service parameter1 index
+```
